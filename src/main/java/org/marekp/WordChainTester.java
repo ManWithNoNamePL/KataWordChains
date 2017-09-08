@@ -8,11 +8,17 @@ import java.util.List;
 public class WordChainTester {
 
     public static void main(String[] args) {
-        WordDictionary dictionary = new WordDictionary("wordlist.txt");
-        WordChainsSolver solver = new WordChainsSolver();
-
         String beginWord = "cat";
         String endWord = "dog";
+        if (args.length < 2) {
+            System.out.println(String.format("No arguments (or not enough) provided, test will be performed" +
+                    " on predefined values - begin word [%s], end [%s]", beginWord, endWord));
+        } else {
+            beginWord = args[0];
+            endWord = args[1];
+        }
+        WordDictionary dictionary = new WordDictionary("wordlist.txt");
+        WordChainsSolver solver = new WordChainsSolver();
 
         System.out.println(String.format("Checking possible paths between begin word [%s] and end [%s]", beginWord, endWord));
         LocalTime beforeSolving = LocalTime.now();
