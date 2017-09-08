@@ -14,7 +14,7 @@ WordDictionary dictionary = new WordDictionary("wordlist.txt");
 
 _At this point loading dictionary mechanism is designed to load it from resources, but if needed it may be easly extended to load dictionary from any place_
 
-#### Running 
+#### Testing solutions 
 
 To check how algorith work download project and open it in your favourtie IDE, WordChainTester have main that may accept 2 args for begin and end word. It may be of course modified directly in in this class just by changing:
 ```java
