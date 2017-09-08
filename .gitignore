@@ -8,3 +8,6 @@
 .idea/vcs.xml
 .idea/workspace.xml
 .idea/misc.xml
+*.class
+target/classes/wordlist.txt
+target/test-classes/wordlist.txt

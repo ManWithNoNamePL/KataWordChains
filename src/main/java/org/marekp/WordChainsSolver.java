@@ -32,13 +32,13 @@ public class WordChainsSolver {
         for (String word : words) {
             adjustedWords.put(word, new ArrayList<>());
         }
-        Queue<String> queue = new LinkedList<>();
-        queue.offer(beginWord);
+        Deque<String> stack = new ArrayDeque<>();
+        stack.offer(beginWord);
         distance.put(beginWord, 0);
-        while (!queue.isEmpty()) {
-            int count = queue.size();
+        while (!stack.isEmpty()) {
+            int count = stack.size();
             for (int i = 0; i < count; i++) {
-                String currentWord = queue.poll();
+                String currentWord = stack.poll();
                 List<String> eligibleAdjustedWords = findEligibleAdjustedWords(currentWord, words);
                 for (String adjusted : eligibleAdjustedWords) {
                     adjustedWords.get(currentWord).add(adjusted);
@@ -47,7 +47,7 @@ public class WordChainsSolver {
                         if (endWord.equals(adjusted)) {
                             return;
                         } else {
-                            queue.offer(adjusted);
+                            stack.offer(adjusted);
                         }
                     }
                 }
